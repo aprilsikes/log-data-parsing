@@ -7,7 +7,7 @@ describe('Parses dates from logs', function () {
   'I, [2014-05-12T14:48:19.093800 #85971]  INFO -- : mars volta\n' +
   'I, [2014-05-10T14:48:19.093800 #85971]  INFO -- : innovate real-time';
 
-  xit('preps log data into an array of lines', function () {
+  it('preps log data into an array of lines', function () {
     var expected = [
       'D, [2014-05-10T14:48:19.093626 #85971] DEBUG -- : maximize',
       'I, [2014-05-11T14:48:19.093737 #85971]  INFO -- : benchmark vertical',
@@ -25,7 +25,7 @@ describe('Parses dates from logs', function () {
     expect(parser.getDates(logs)).toEqual(expected);
   })
 
-  xit('prints the list of log dates', function () {
+  it('prints the list of log dates', function () {
     var dates = [ '2014-05-10', '2014-05-11', '2014-05-12' ]
     var expected = '* What are all the dates the log covers?\n' +
     '2014-05-10\n' + '2014-05-11\n' + '2014-05-12\n';
